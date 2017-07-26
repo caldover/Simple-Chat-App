@@ -18,7 +18,7 @@
 
     <!--Action bar style-->
     <style name="ActionBarStyle" parent="@android:style/Widget.Holo.ActionBar">
-        <item name="android:background">@color/chat_sdk_theme_color</item>
+        <item name="android:background">#071d49</item>
         <item name="android:titleTextStyle">@style/actionBarTextStyle</item>
     </style>
 

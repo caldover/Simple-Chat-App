@@ -53,39 +53,32 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/chat_sdk_btn_anon_login"
+            android:layout_above="@+id/chat_sdk_btn_register"
             android:layout_marginTop="10dp"
             android:id="@+id/linear_buttons"
             android:layout_centerHorizontal="true">
 
             <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/login"
-                style="@style/LoginButtonsStyle"
-                android:background="@drawable/chat_sdk_login_button_selector"
                 android:id="@+id/chat_sdk_btn_login"
-                android:layout_weight="1"/>
-
-            <Button
+                style="@style/LoginButtonsStyle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/register"
-                style="@style/LoginButtonsStyle"
-                android:background="@drawable/chat_sdk_register_button_selector"
-                android:id="@+id/chat_sdk_btn_register"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:background="@drawable/chat_sdk_login_button_selector"
+                android:text="@string/login" />
+
         </LinearLayout>
 
+
         <Button
+            android:id="@+id/chat_sdk_btn_register"
+            style="@style/LoginButtonsStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/anonymous_login"
-            android:id="@+id/chat_sdk_btn_anon_login"
-            style="@style/LoginButtonsStyle"
-            android:background="@drawable/chat_sdk_login_anonymously_button_selector"
             android:layout_above="@+id/linear_api_buttons"
-            android:layout_marginTop="10dp"/>
+            android:layout_marginTop="10dp"
+            android:background="@drawable/chat_sdk_register_button_selector"
+            android:text="@string/register" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,6 +89,7 @@
             android:layout_marginTop="10dp"
             android:layout_above="@+id/li_version">
 
+            <!--
             <com.facebook.widget.LoginButton
                 xmlns:fb="http://schemas.android.com/apk/res-auto"
                 android:layout_width="48dp"
@@ -121,12 +115,14 @@
                 android:background="@drawable/ic_google"
                 android:layout_marginLeft="5dp"
                 android:id="@+id/chat_sdk_btn_google_login"/>
+            -->
 
         </LinearLayout>
 
 
 
         <LinearLayout
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -134,6 +130,7 @@
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"
             >
+            <!--
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -141,9 +138,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginLeft="3dp"
                 android:layout_centerHorizontal="true"
-                android:layout_below="@+id/chat_sdk_btn_anon_login"
+                android:layout_below="@+id/chat_sdk_btn_anon_login"/>
                 android:text="@string/chat_sdk_version"/>
-
+            -->
+            <!--
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -151,8 +149,10 @@
                 android:layout_marginTop="5dp"
                 android:layout_toRightOf="@+id/chat_sdk_txt_version"
                 android:layout_alignTop="@+id/chat_sdk_txt_version"/>
-
+                -->
         </LinearLayout>
+
+
     </RelativeLayout>
 
 </LinearLayout>

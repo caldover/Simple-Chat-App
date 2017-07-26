@@ -36,12 +36,12 @@ public class ChatSDKLoginActivity extends ChatSDKAbstractLoginActivity implement
     private static final String TAG = ChatSDKLoginActivity.class.getSimpleName();
     private static boolean DEBUG = Debug.LoginActivity;
 
-    private Button btnLogin, btnReg, btnAnon, btnTwitter;
+    private Button btnLogin, btnReg; //btnAnon, btnTwitter;
     private ImageView appIconImage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        enableFacebookIntegration(getNetworkAdapter().facebookEnabled());
+        //enableFacebookIntegration(getNetworkAdapter().facebookEnabled());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.chat_sdk_activty_login);
 
@@ -53,24 +53,24 @@ public class ChatSDKLoginActivity extends ChatSDKAbstractLoginActivity implement
 
         initViews();
 
-        ((TextView) findViewById(R.id.chat_sdk_txt_version)).setText(String.valueOf(BuildConfig.VERSION_NAME));
+        //((TextView) findViewById(R.id.chat_sdk_txt_version)).setText(String.valueOf(BuildConfig.VERSION_NAME));
     }
 
     @Override
     protected void initViews(){
         super.initViews();
-        facebookLogin.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0);
-        facebookLogin.setBackgroundResource(R.drawable.ic_facebook);
+        //facebookLogin.setCompoundDrawablesWithIntrinsicBounds(0,0,0,0);
+        //facebookLogin.setBackgroundResource(R.drawable.ic_facebook);
 
-        if (integratedWithFacebook)
-        {
+        //if (integratedWithFacebook)
+        //{
 
-            facebookLogin.setReadPermissions(Arrays.asList("email", "user_friends"));
-        }
+        //    facebookLogin.setReadPermissions(Arrays.asList("email", "user_friends"));
+        //}
 
         btnLogin = (Button) findViewById(R.id.chat_sdk_btn_login);
-        btnAnon = (Button) findViewById(R.id.chat_sdk_btn_anon_login);
-        btnTwitter = (Button) findViewById(R.id.chat_sdk_btn_twitter_login);
+        //btnAnon = (Button) findViewById(R.id.chat_sdk_btn_register);
+        //btnTwitter = (Button) findViewById(R.id.chat_sdk_btn_twitter_login);
         btnReg = (Button) findViewById(R.id.chat_sdk_btn_register);
         etEmail = (EditText) findViewById(R.id.chat_sdk_et_mail);
         etPass = (EditText) findViewById(R.id.chat_sdk_et_password);
@@ -89,8 +89,8 @@ public class ChatSDKLoginActivity extends ChatSDKAbstractLoginActivity implement
         /* Registering listeners.*/
         btnLogin.setOnClickListener(this);
         btnReg.setOnClickListener(this);
-        btnAnon.setOnClickListener(this);
-        btnTwitter.setOnClickListener(this);
+        //btnAnon.setOnClickListener(this);
+        //btnTwitter.setOnClickListener(this);
 
         etPass.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
@@ -140,16 +140,16 @@ public class ChatSDKLoginActivity extends ChatSDKAbstractLoginActivity implement
         if (i == R.id.chat_sdk_btn_login) {
             passwordLogin();
         }
-        else if (i == R.id.chat_sdk_btn_anon_login) {
-            anonymosLogin();
-        }
+        //else if (i == R.id.chat_sdk_btn_register) {
+        //    anonymosLogin();
+        //}
         else if (i == R.id.chat_sdk_btn_register)
         {
             register();
         }
-        else if (i == R.id.chat_sdk_btn_twitter_login){
-            twitterLogin();
-        }
+        //else if (i == R.id.chat_sdk_btn_twitter_login){
+        //    twitterLogin();
+        //}
     }
 
 }
