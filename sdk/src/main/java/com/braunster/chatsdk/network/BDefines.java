@@ -94,7 +94,7 @@ public class BDefines {
      * */
     public static boolean IndexUserPhoneNumber = true;
 
-    public static final String ContactDeveloper_Email = "";
+    public static final String ContactDeveloper_Email = "cka6@njit.edu";
     public static final String ContactDeveloper_Subject = "Report: ";
     public static final String ContactDeveloper_DialogTitle = "Contact Developer";
 
