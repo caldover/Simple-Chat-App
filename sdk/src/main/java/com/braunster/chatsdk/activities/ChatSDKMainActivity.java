@@ -19,6 +19,10 @@ import android.preference.PreferenceManager;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 
 import com.astuetz.pagersslidingtabstrip.PagerSlidingTabStrip;
 import com.braunster.chatsdk.R;
@@ -248,6 +252,9 @@ public class ChatSDKMainActivity extends ChatSDKBaseActivity {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
+
+        final Context context = this;
+
         if (item.getItemId() == R.id.android_settings) {
 
             // FIXME Clearing the cache, Just for debug.
@@ -255,6 +262,29 @@ public class ChatSDKMainActivity extends ChatSDKBaseActivity {
 
             VolleyUtils.getBitmapCache().resize(1);
             VolleyUtils.getBitmapCache().resize(maxMemory / 8);*/
+
+            AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                    context);
+
+            // set title
+            alertDialogBuilder.setTitle("Simple Chat App");
+
+            // set dialog message
+            alertDialogBuilder
+                    .setMessage("An educational project for NJIT's CS 656 class. Built and made possible with ChatSDK and Firebase.")
+                    .setCancelable(false)
+                    .setPositiveButton("Close",new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog,int id) {
+                            dialog.dismiss();
+                        }
+                    });
+
+            // create alert dialog
+            AlertDialog alertDialog = alertDialogBuilder.create();
+
+            // show it
+            alertDialog.show();
+
             return true;
         }
         else   if (item.getItemId() == R.id.contact_developer) {
